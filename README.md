@@ -75,7 +75,7 @@ git fetch && \
 git reset --hard && \
 git pull
 
-git checkout v1.2  # check the latest release
+git checkout v1.1  # check the latest release
 
 cat ~/ping/config.py  # read new default config
 
@@ -87,7 +87,8 @@ python3 ping.py  # start ping
 --------
 ## screenshots
 
+
 <p align="center">
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208439649-4c16c17a-8e5f-47eb-914b-71f539623ed4.png">
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208438701-b5551cbf-6a8c-42f7-9218-326417ad4eed.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208536945-12e91897-1cd7-4678-9636-8c7a2e95a901.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208537089-63e58309-510a-4909-ab7b-8455d70168db.png">
 </p>
