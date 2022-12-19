@@ -22,8 +22,8 @@ def ping_servers():
         ip = SERVERS[server]
         instance = Server(ip=ip)
         if not instance.is_server_online():
-            logger.warning(f"{server} | {OFFLINE_EMOJI} | {ip}")
-            telegram.send_message(message=f"{server} | {OFFLINE_EMOJI} | {ip}")
+            logger.warning(f"{OFFLINE_EMOJI} {server} /// {ip} {OFFLINE_EMOJI}")
+            telegram.send_message(message=f"<code>{OFFLINE_EMOJI} {server} /// {ip} {OFFLINE_EMOJI}</code>")
         else:
-            logger.info(f"{server} | {ONLINE_EMOJI} | {ip}")
+            logger.info(f"{ONLINE_EMOJI} {server} /// {ip} {ONLINE_EMOJI}")
     time.sleep(TIME_SLEEP_BETWEEN_PINGS_SEC)

@@ -13,6 +13,7 @@ class TelegramBot:
             f"https://api.telegram.org/bot{self.bot_api_token}/sendMessage",
             json={
                 'chat_id': self.alarm_chat_id,
-                'text': message
+                'text': message,
+                'parse_mode': 'HTML',
             }
         )
