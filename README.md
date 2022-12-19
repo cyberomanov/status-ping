@@ -75,9 +75,11 @@ git fetch && \
 git reset --hard && \
 git pull
 
-git checkout v1.1  # check the latest release
+git checkout v1.2  # check the latest release
+
 cat ~/ping/config.py  # read new default config
-mv ~/config_temp.py ~/ping/config.py  # restore your previous config if there is no breaking changes
+
+mv ~/config_temp.py ~/ping/config.py  # restore your previous config ONLY if there is no breaking changes
 
 python3 ping.py  # start ping
 ```
