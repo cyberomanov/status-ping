@@ -2,7 +2,7 @@
 
 This system will alert you with telegram about offline servers.
 
-Instruction:
+## installation
 
 1. Create telegram bot via `@BotFather`, customize it and `get bot API token` ([how_to](https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token)).
 2. Create at least 1 group: `alarm`. Customize it, add your bot into this chat and `get chat ID` ([how_to](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id)).
@@ -60,6 +60,31 @@ python3 ping.py
 >>> 16:36:06 | INFO | [mevspace] with [89.xx.xx.146] is online.
 >>> 16:36:56 | WARNING | [edgevana] with [12.xx.xx.114] is offline.
 ```
+
+---------
+## update
+
+```
+tmux attach -t ping  # ctrl + c to stop the process
+
+cp ~/ping/config.py ~/config_temp.py  # backup your config
+
+# hard update
+cd ~/ping/ && \
+git fetch && \
+git reset --hard && \
+git pull
+
+git checkout v1.1  # check the latest release
+cat ~/ping/config.py  # read new default config
+mv ~/config_temp.py ~/ping/config.py  # restore your previous config if there is no breaking changes
+
+python3 ping.py  # start ping
+```
+
+--------
+## screenshots
+
 <p align="center">
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208439649-4c16c17a-8e5f-47eb-914b-71f539623ed4.png">
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208438701-b5551cbf-6a8c-42f7-9218-326417ad4eed.png">
