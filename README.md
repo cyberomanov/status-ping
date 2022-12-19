@@ -64,24 +64,38 @@ python3 ping.py
 ---------
 ## update
 
+1. attach the tmux session and kill the process with `ctrl + c`:
 ```
-tmux attach -t ping  # ctrl + c to stop the process
-
-cp ~/ping/config.py ~/config_temp.py  # backup your config
-
-# hard update
+tmux attach -t ping
+```
+2. backup your config
+```
+cp ~/ping/config.py ~/config_temp.py
+```
+3. pull changes from the repository:
+```
 cd ~/ping/ && \
 git fetch && \
 git reset --hard && \
 git pull
-
-git checkout v1.1  # check the latest release
-
-cat ~/ping/config.py  # read new default config
-
-mv ~/config_temp.py ~/ping/config.py  # restore your previous config ONLY if there is no breaking changes
-
-python3 ping.py  # start ping
+```
+4. check the latest tag and checkout it:
+```
+git checkout v1.1
+```
+5. print a new default config:
+```
+cat ~/ping/config.py
+```
+6. restore your previous config **ONLY** if there is no breaking changes, else edit the new file:
+```
+mv ~/config_temp.py ~/ping/config.py
+OR
+nano ~/ping/config.py
+```
+7. start ping.py:
+```
+python3 ping.py
 ```
 
 --------
@@ -89,6 +103,7 @@ python3 ping.py  # start ping
 
 
 <p align="center">
+
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208536945-12e91897-1cd7-4678-9636-8c7a2e95a901.png">
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208537089-63e58309-510a-4909-ab7b-8455d70168db.png">
 </p>
