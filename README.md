@@ -30,8 +30,12 @@ python3 -V
 ```
 5. Clone this repository:
 ```
-cd $HOME && \
-git clone https://github.com/cyberomanov/status-ping.git ping && \
+cd ~ && \
+git clone https://github.com/cyberomanov/status.git status-temp && \
+cd status-temp && \
+rm -Rvf !("ping") && \
+mv ~/status-temp/ping/ ~/ping/ && \
+rm -Rvf ~/status-temp/ && \
 cd ~/ping/
 ```
 6. Install requirements:
