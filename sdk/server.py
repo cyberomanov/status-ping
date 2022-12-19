@@ -3,7 +3,7 @@ import subprocess
 
 
 class Server:
-    PING_TRIES = 5
+    PING_TRIES = 3
 
     def __init__(self, ip: str):
         self.ip = ip
