@@ -2,6 +2,16 @@
 
 This system will alert you with telegram about offline servers.
 
+## screenshots
+
+<p align="center">
+logs:
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208536945-12e91897-1cd7-4678-9636-8c7a2e95a901.png">
+<br> <br>
+telegram message:
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208537089-63e58309-510a-4909-ab7b-8455d70168db.png">
+</p>
+
 ## installation
 
 1. Create telegram bot via `@BotFather`, customize it and `get bot API token` ([how_to](https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token)).
@@ -97,13 +107,3 @@ nano ~/ping/config.py
 ```
 python3 ping.py
 ```
-
---------
-## screenshots
-
-
-<p align="center">
-
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208536945-12e91897-1cd7-4678-9636-8c7a2e95a901.png">
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208537089-63e58309-510a-4909-ab7b-8455d70168db.png">
-</p>
