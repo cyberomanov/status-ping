@@ -30,12 +30,8 @@ python3 -V
 ```
 5. Clone this repository:
 ```
-cd ~ && \
-git clone https://github.com/cyberomanov/status.git status-temp && \
-cd status-temp && \
-rm -Rvf !("ping") && \
-mv ~/status-temp/ping/ ~/ping/ && \
-rm -Rvf ~/status-temp/ && \
+cd ~/ && \
+git clone https://github.com/cyberomanov/status-ping.git ping && \
 cd ~/ping/
 ```
 6. Install requirements:
@@ -48,8 +44,8 @@ nano ~/ping/config.py
 ```
 8. Open new tmux session:
 ```
-tmux new -s ping
-# tmux attach -t ping  # to re-open the session
+tmux new -s ping  # to init a session
+tmux attach -t ping  # to re-open the session
 ```
 9. Run the ping.py:
 ```
