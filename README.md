@@ -1,18 +1,22 @@
 # ping
 
-This system will alert you with telegram about offline servers.
+this system will alert you with telegram about offline servers.
 
-## screenshots
+## contents
+1. [screenshots](https://github.com/cyberomanov/status-ping#screenshots)
+2. [installation](https://github.com/cyberomanov/status-ping#installation)
+3. [update](https://github.com/cyberomanov/status-ping#update)
+4. [donations](https://github.com/cyberomanov/status-ping#donations)
+
+### screenshots
 
 <p align="center">
-logs:
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208536945-12e91897-1cd7-4678-9636-8c7a2e95a901.png">
 <br> <br>
-telegram message:
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208537089-63e58309-510a-4909-ab7b-8455d70168db.png">
 </p>
 
-## installation
+### installation
 
 1. Create telegram bot via `@BotFather`, customize it and `get bot API token` ([how_to](https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token)).
 2. Create at least 1 group: `alarm`. Customize it, add your bot into this chat and `get chat ID` ([how_to](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id)).
@@ -72,7 +76,7 @@ python3 ping.py
 ```
 
 ---------
-## update
+### update
 
 1. attach the tmux session and kill the process with `ctrl + c`:
 ```
@@ -106,4 +110,15 @@ nano ~/ping/config.py
 7. start ping.py:
 ```
 python3 ping.py
+```
+
+### donations
+
+```
+SOL >>> 8UM1sHHShTgNa4vjQV6v1SEvi3BwDn4wG1pRRZnbFvRY
+BTC >>> bc1qqpllwvwj3vrp6p5qq5t698j6fx2zaxlucrchru
+DOT >>> 15rCbyqHZnS6oWon2ntp1JGPBZsTxt66EThMDMxdPxs67Y2K
+ATOM >> cosmos1h359yz2xyy323ezd4dryxldkv98f2sc0cccjjw
+TRC >>> TMZczdd7LZJSCp83WrLn245t6rSeEYeBTh
+ETH >>>  0x81fb0dF0F16ABC3BE334aB619154C9b3736aB9c1
 ```
