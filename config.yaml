@@ -1,0 +1,22 @@
+servers:
+  server_name_1: 3.2.1.1
+  server_name_2: 124.124.124.124
+  server_name_3: cyberomanov.tech
+  server_name_4: cyberomanov.me
+
+settings:
+
+  # telegram
+  bot_api_key: "1703:AA-BB_CC"
+  alarm_chat_id: "-2109"
+  
+  # output
+  online_emoji: "\U0001F7E2"
+  offline_emoji: "\U0001F534"
+  message_template: "{emoji} {name} /// {host} {emoji}"
+  
+  # logic
+  sleep_time_between_loops: 60
+  log_output: "./log/ping.log"
+  log_rotation: "500 MB"
+  
