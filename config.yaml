@@ -13,7 +13,7 @@ settings:
   # output
   online_emoji: "\U0001F7E2"
   offline_emoji: "\U0001F534"
-  message_template: "{emoji} {name} /// {host} {emoji}"
+  message_template: "{emoji} {name} /// {host} {emoji} | {ping_log}."
   streamer_mode: true  # if true: "178.x.x.19", else: "178.18.17.19"
   
   # logic
