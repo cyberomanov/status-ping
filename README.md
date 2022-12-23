@@ -64,15 +64,6 @@ tmux attach -t ping  # to re-open the session
 9. Run the `ping.py`:
 ```
 python3 ping.py
-
->>> 16:34:15 | INFO | [ax101] with [181.xx.xx.78] is online.
->>> 16:34:15 | INFO | [ax69] with [81.xx.xx.142] is online.
->>> 16:34:15 | INFO | [mevspace] with [89.xx.xx.146] is online.
->>> 16:35:05 | WARNING | [edgevana] with [12.xx.xx.114] is offline.
->>> 16:36:05 | INFO | [ax101] with [181.xx.xx.78] is online.
->>> 16:36:06 | INFO | [ax69] with [81.xx.xx.142] is online.
->>> 16:36:06 | INFO | [mevspace] with [89.xx.xx.146] is online.
->>> 16:36:56 | WARNING | [edgevana] with [12.xx.xx.114] is offline.
 ```
 
 ---------
