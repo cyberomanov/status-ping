@@ -1,6 +1,6 @@
 import requests
 
-from datatypes.telegram_response import TelegramResponse
+from datatypes.telegram import Response
 
 
 class Telegram:
@@ -8,7 +8,7 @@ class Telegram:
         self.bot_api_token = bot_api_token
         self.alarm_chat_id = alarm_chat_id
 
-    def send_message(self, message: str) -> TelegramResponse:
+    def send_message(self, message: str) -> Response:
         response = requests.post(
             f"https://api.telegram.org/bot{self.bot_api_token}/sendMessage",
             json={
@@ -17,4 +17,4 @@ class Telegram:
                 "parse_mode": "HTML",
             }
         ).json()
-        return TelegramResponse.parse_obj(response)
+        return Response.parse_obj(response)

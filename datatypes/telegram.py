@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class TelegramResponse(BaseModel):
+class Response(BaseModel):
     ok: bool
     error_code: int | None
     description: str | None
