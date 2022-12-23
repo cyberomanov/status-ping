@@ -11,9 +11,9 @@ this system will alert you with telegram about offline servers.
 ### screenshots
 
 <p align="center">
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208536945-12e91897-1cd7-4678-9636-8c7a2e95a901.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/209252582-ec7bb266-8cea-4409-a7e7-c631f7dc45c4.png">
 <br> <br>
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/208537089-63e58309-510a-4909-ab7b-8455d70168db.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/209252625-4b1ca66f-9423-4570-a1e5-1bf4d3f14d64.png">
 </p>
 
 ### installation
