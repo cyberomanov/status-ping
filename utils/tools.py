@@ -42,8 +42,8 @@ def get_server_instances(servers: dict[str, str]) -> list[Server]:
 def send_telegram_warn(telegram: Telegram, warn: str):
     response = telegram.send_message(warn)
     if not response.ok:
-        logger.error(f"{warn} | telegram response is not ok. "
+        logger.error(f"{warn} telegram response is not ok. "
                      f"code: {response.error_code}, "
                      f"description: {response.description}.")
     else:
-        logger.warning(f"{warn} | telegram message successfully sent.")
+        logger.warning(f"{warn} telegram message successfully sent.")

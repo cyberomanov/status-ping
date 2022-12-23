@@ -14,7 +14,7 @@ class Server:
 
     @staticmethod
     def _parse_ping_log(response: str) -> str:
-        return re.findall('\d+ packets transmitted, \d+ packets received', response)[0]
+        return re.findall('\d+.*?loss', response)[0]
 
     @staticmethod
     def _get_packets(ping_log: str) -> Packets:
