@@ -13,7 +13,7 @@ this system will alert you with telegram about offline servers.
 <p align="center">
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/209252582-ec7bb266-8cea-4409-a7e7-c631f7dc45c4.png">
 <br> <br>
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/209252625-4b1ca66f-9423-4570-a1e5-1bf4d3f14d64.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/209252699-f056ee8b-e43f-4fc5-9e5f-706019d13223.png">
 </p>
 
 ### installation
