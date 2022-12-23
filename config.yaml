@@ -18,6 +18,6 @@ settings:
   
   # logic
   log_output: "./log/ping.log"
-  log_rotation: "500 MB"
+  log_rotation: "50 MB"
   sleep_time_between_loops: 300  # in seconds
   packets_loss_for_alarm: 80  # in percent
