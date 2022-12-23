@@ -14,10 +14,9 @@ settings:
   online_emoji: "\U0001F7E2"
   offline_emoji: "\U0001F534"
   message_template: "{emoji} {name} /// {host} {emoji}"
+  streamer_mode: true  # if true: "178.x.x19", else: "178.18.17.19"
   
   # logic
-  streamer_mode: true            # if true: "178.x.x19", else: "178.18.17.19"
-  sleep_time_between_loops: 60   # in seconds
   log_output: "./log/ping.log"
   log_rotation: "500 MB"
-  
+  sleep_time_between_loops: 60  # in seconds
