@@ -11,6 +11,7 @@ class Settings(BaseModel):
     offline_emoji: str
     message_template: str
     streamer_mode: bool
+    packets_loss_for_alarm: int
 
 
 class Config(BaseModel):

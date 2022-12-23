@@ -32,10 +32,10 @@ def generate_log_record(settings: Settings, instance: Server, offline: bool, pin
     )
 
 
-def get_server_instances(servers: dict[str, str]) -> list[Server]:
+def get_server_instances(servers: dict[str, str], settings: Settings) -> list[Server]:
     instances = []
     for server in servers.items():
-        instances.append(Server(name=server[0], host=server[1]))
+        instances.append(Server(name=server[0], host=server[1], settings=settings))
     return instances
 
 

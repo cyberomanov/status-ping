@@ -14,7 +14,7 @@ def ping():
         settings, servers = config.settings, config.servers
         create_logger(log_output=settings.log_output, log_rotation=settings.log_rotation)
         telegram = Telegram(bot_api_token=settings.bot_api_key, alarm_chat_id=settings.alarm_chat_id)
-        server_instances = get_server_instances(servers=servers)
+        server_instances = get_server_instances(servers=servers, settings=settings)
     except Exception as e:
         logger.exception(e)
     else:
