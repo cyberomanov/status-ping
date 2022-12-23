@@ -84,7 +84,7 @@ tmux attach -t ping
 ```
 2. backup your config
 ```
-cp ~/ping/config.py ~/config_temp.py
+cp ~/ping/config.yaml ~/config_temp.yaml
 ```
 3. pull changes from the repository:
 ```
@@ -95,17 +95,17 @@ git pull
 ```
 4. check the latest tag and checkout it:
 ```
-git checkout v1.1
+git checkout
 ```
 5. print a new default config:
 ```
-cat ~/ping/config.py
+cat ~/ping/config.yaml
 ```
 6. restore your previous config **ONLY** if there is no breaking changes, else edit the new file:
 ```
-mv ~/config_temp.py ~/ping/config.py
+mv ~/config_temp.yaml ~/ping/config.yaml
 OR
-nano ~/ping/config.py
+nano ~/ping/config.yaml
 ```
 7. start ping.py:
 ```
