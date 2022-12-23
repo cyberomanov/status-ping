@@ -52,16 +52,16 @@ cd ~/ping/
 ```
 pip3 install -r ~/ping/requirements.txt
 ```
-7. Edit config.py (recommend to set 1 offline/non-pingable server to check your alarms via telegram):
+7. Edit `config.yaml` (recommend to set 1 offline/non-pingable server to check your alarms via telegram):
 ```
-nano ~/ping/config.py
+nano ~/ping/config.yaml
 ```
 8. Open new tmux session:
 ```
 tmux new -s ping  # to init a session
 tmux attach -t ping  # to re-open the session
 ```
-9. Run the ping.py:
+9. Run the `ping.py`:
 ```
 python3 ping.py
 
@@ -82,7 +82,7 @@ python3 ping.py
 ```
 tmux attach -t ping
 ```
-2. backup your config
+2. backup your config:
 ```
 cp ~/ping/config.yaml ~/config_temp.yaml
 ```
@@ -93,7 +93,7 @@ git fetch && \
 git reset --hard && \
 git pull
 ```
-4. check the latest tag and checkout it:
+4. checkout the latest release:
 ```
 git checkout
 ```
@@ -101,13 +101,13 @@ git checkout
 ```
 cat ~/ping/config.yaml
 ```
-6. restore your previous config **ONLY** if there is no breaking changes, else edit the new file:
+6. restore your previous config, **ONLY** if there is no breaking changes, else edit the new file:
 ```
 mv ~/config_temp.yaml ~/ping/config.yaml
 OR
 nano ~/ping/config.yaml
 ```
-7. start ping.py:
+7. start `ping.py`:
 ```
 python3 ping.py
 ```
