@@ -16,6 +16,7 @@ settings:
   message_template: "{emoji} {name} /// {host} {emoji}"
   
   # logic
+  streamer_mode: true
   sleep_time_between_loops: 60
   log_output: "./log/ping.log"
   log_rotation: "500 MB"
