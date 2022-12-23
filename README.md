@@ -98,7 +98,11 @@ mv ~/config_temp.yaml ~/ping/config.yaml
 OR
 nano ~/ping/config.yaml
 ```
-7. start `ping.py`:
+7. Install requirements:
+```
+pip3 install -r ~/ping/requirements.txt
+```
+8. start `ping.py`:
 ```
 python3 ping.py
 ```
