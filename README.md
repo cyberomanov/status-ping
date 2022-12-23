@@ -10,10 +10,11 @@ this system will alert you with telegram about offline servers.
 
 ### screenshots
 
+
 <p align="center">
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/209252582-ec7bb266-8cea-4409-a7e7-c631f7dc45c4.png">
+<img width="1000" alt="image" src="https://user-images.githubusercontent.com/41644451/209399231-e27f2a85-1f05-4583-bcd9-227e2fe800c0.png">
 <br> <br>
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/209252699-f056ee8b-e43f-4fc5-9e5f-706019d13223.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/209399270-1630eda4-deee-419a-9843-fa049a817e9e.png">
 </p>
 
 ### installation
@@ -84,25 +85,21 @@ git fetch && \
 git reset --hard && \
 git pull
 ```
-4. checkout the latest release:
-```
-git checkout
-```
-5. print a new default config:
+4. print a new default config:
 ```
 cat ~/ping/config.yaml
 ```
-6. restore your previous config, **ONLY** if there is no breaking changes, else edit the new file:
+5. restore your previous config, **ONLY** if there is no breaking changes, else edit the new file:
 ```
 mv ~/config_temp.yaml ~/ping/config.yaml
 OR
 nano ~/ping/config.yaml
 ```
-7. Install requirements:
+6. Install requirements:
 ```
 pip3 install -r ~/ping/requirements.txt
 ```
-8. start `ping.py`:
+7. start `ping.py`:
 ```
 python3 ping.py
 ```
