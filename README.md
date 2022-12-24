@@ -62,9 +62,11 @@ nano ~/ping/config.yaml
 python3 ping.py
 ```
 9. If all seems okay, then edit your crontab with `crontab -e`:
+> 1 ping for 1 server takes about 1 minute.<br>
+> so you have to edit your crontab rules with this knowledge.
 ```
 # ping
-*/5 * * * * /usr/bin/python3 /root/ping/ping.py
+*/10 * * * * /usr/bin/python3 /root/ping/ping.py
 ```
 > check your logs in 5-10-15 minutes here: `~/ping/log/ping.log`
 ---------
