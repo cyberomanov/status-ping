@@ -66,7 +66,7 @@ python3 ping.py
 > so you have to edit your crontab rules with this knowledge.
 ```
 # ping
-*/10 * * * * /usr/bin/python3 /root/ping/ping.py
+*/15 * * * * cd /root/ping/ && /usr/bin/python3 ping.py
 ```
 > check your logs in 5-10-15 minutes here: `~/ping/log/ping.log`
 ---------
