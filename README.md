@@ -57,16 +57,11 @@ pip3 install -r ~/ping/requirements.txt
 ```
 nano ~/ping/config.yaml
 ```
-8. Open new tmux session:
-```
-tmux new -s ping  # to init a session
-tmux attach -t ping  # to re-open the session
-```
-9. Run the `ping.py` to check you config settings:
+8. Run the `ping.py` to check you config settings:
 ```
 python3 ping.py
 ```
-10. If all seems okay, then edit your crontab with `crontab -e`:
+9. If all seems okay, then edit your crontab with `crontab -e`:
 ```
 # ping
 */5 * * * * /usr/bin/python3 /root/ping/ping.py
@@ -75,36 +70,32 @@ python3 ping.py
 ---------
 ### update
 
-1. attach the tmux session and kill the process with `ctrl + c`:
-```
-tmux attach -t ping
-```
-2. backup your config:
+1. backup your config:
 ```
 cp ~/ping/config.yaml ~/config_temp.yaml
 ```
-3. pull changes from the repository:
+2. pull changes from the repository:
 ```
 cd ~/ping/ && \
 git fetch && \
 git reset --hard && \
 git pull
 ```
-4. print a new default config:
+3. print a new default config:
 ```
 cat ~/ping/config.yaml
 ```
-5. restore your previous config, **ONLY** if there is no breaking changes, else edit the new file:
+4. restore your previous config, **ONLY** if there is no breaking changes, else edit the new file:
 ```
 mv ~/config_temp.yaml ~/ping/config.yaml
 OR
 nano ~/ping/config.yaml
 ```
-6. Install requirements:
+5. Install requirements:
 ```
 pip3 install -r ~/ping/requirements.txt
 ```
-7. Run the `ping.py` to check you config settings:
+6. Run the `ping.py` to check you config settings:
 ```
 python3 ping.py
 ```
