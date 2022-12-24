@@ -62,11 +62,16 @@ nano ~/ping/config.yaml
 tmux new -s ping  # to init a session
 tmux attach -t ping  # to re-open the session
 ```
-9. Run the `ping.py`:
+9. Run the `ping.py` to check you config settings:
 ```
 python3 ping.py
 ```
-
+10. If all seems okay, then edit your crontab with `crontab -e`:
+```
+# ping
+*/5 * * * * /usr/bin/python3 /root/ping/ping.py
+```
+> check your logs in 5-10-15 minutes here: `~/ping/log/ping.log`
 ---------
 ### update
 
@@ -99,7 +104,7 @@ nano ~/ping/config.yaml
 ```
 pip3 install -r ~/ping/requirements.txt
 ```
-7. start `ping.py`:
+7. Run the `ping.py` to check you config settings:
 ```
 python3 ping.py
 ```
