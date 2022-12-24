@@ -1,5 +1,3 @@
-import time
-
 from loguru import logger
 
 from sdk.telegram import Telegram
@@ -18,27 +16,24 @@ def ping():
     except Exception as e:
         logger.exception(e)
     else:
-        while True:
-            try:
-                for instance in server_instances:
-                    server = instance.ping()
-                    if server.is_offline:
-                        warn = generate_log_record(settings=settings,
-                                                   instance=instance,
-                                                   offline=True,
-                                                   ping_log=server.ping_log)
-                        send_telegram_warn(telegram=telegram, warn=warn)
-                    else:
-                        logger.info(generate_log_record(settings=settings,
-                                                        instance=instance,
-                                                        offline=False,
-                                                        ping_log=server.ping_log))
-                logger.success(f"next check-up in {settings.sleep_time_between_loops} sec/s.")
-                time.sleep(settings.sleep_time_between_loops)
-            except Exception as e:
-                logger.exception(e)
-            except KeyboardInterrupt:
-                break
+        try:
+            for instance in server_instances:
+                server = instance.ping()
+                if server.is_offline:
+                    warn = generate_log_record(settings=settings,
+                                               instance=instance,
+                                               offline=True,
+                                               ping_log=server.ping_log)
+                    send_telegram_warn(telegram=telegram, warn=warn)
+                else:
+                    logger.info(generate_log_record(settings=settings,
+                                                    instance=instance,
+                                                    offline=False,
+                                                    ping_log=server.ping_log))
+        except Exception as e:
+            logger.exception(e)
+        except KeyboardInterrupt:
+            exit()
 
 
 if __name__ == '__main__':
