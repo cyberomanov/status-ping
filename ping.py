@@ -3,7 +3,7 @@ from loguru import logger
 from sdk.telegram import Telegram
 from utils.create_logger import create_logger
 from utils.get_config import get_config
-from utils.tools import send_telegram_warn, generate_log_record, get_server_instances
+from utils.tools import get_server_instances, ping_pool
 
 
 def ping():
@@ -17,19 +17,7 @@ def ping():
         logger.exception(e)
     else:
         try:
-            for instance in server_instances:
-                server = instance.ping()
-                if server.is_offline:
-                    warn = generate_log_record(settings=settings,
-                                               instance=instance,
-                                               offline=True,
-                                               ping_log=server.ping_log)
-                    send_telegram_warn(telegram=telegram, warn=warn)
-                else:
-                    logger.info(generate_log_record(settings=settings,
-                                                    instance=instance,
-                                                    offline=False,
-                                                    ping_log=server.ping_log))
+            ping_pool(server_instances=server_instances, telegram=telegram, settings=settings)
         except Exception as e:
             logger.exception(e)
         except KeyboardInterrupt:

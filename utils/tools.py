@@ -1,8 +1,11 @@
+import concurrent.futures
+import itertools
 import re
 
 from loguru import logger
 
 from datatypes.config import Settings
+from datatypes.executor import Executor, Status
 from sdk.server import Server
 from sdk.telegram import Telegram
 
@@ -20,7 +23,7 @@ def _hide_host(host: str, streamer_mode: bool):
     return host
 
 
-def generate_log_record(settings: Settings, instance: Server, offline: bool, ping_log: str):
+def _generate_log_record(settings: Settings, instance: Server, offline: bool, ping_log: str):
     emoji = settings.offline_emoji if offline else settings.online_emoji
     host = _hide_host(host=instance.host, streamer_mode=settings.streamer_mode)
 
@@ -39,11 +42,51 @@ def get_server_instances(servers: dict[str, str], settings: Settings) -> list[Se
     return instances
 
 
-def send_telegram_warn(telegram: Telegram, warn: str):
-    response = telegram.send_message(warn)
-    if not response.ok:
-        logger.error(f"{warn} telegram response is not ok. "
-                     f"code: {response.error_code}, "
-                     f"description: {response.description}.")
+def ping_pool(server_instances: list[Server], telegram: Telegram, settings: Settings):
+    indexes = range(0, len(server_instances))
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        results = executor.map(_main_executor, indexes,
+                               itertools.repeat(server_instances),
+                               itertools.repeat(telegram),
+                               itertools.repeat(settings))
+
+    for result in results:
+        if result.status.name == 'log':
+            logger.info(result.message)
+        if result.status.name == 'warn':
+            logger.warning(result.message)
+        if result.status.name == 'error':
+            logger.error(result.message)
+
+
+def _main_executor(index: int, server_instances: list[Server], telegram: Telegram, settings: Settings):
+    instance = server_instances[index]
+    server = instance.ping()
+    if server.is_offline:
+        warn = _generate_log_record(settings=settings,
+                                   instance=instance,
+                                   offline=True,
+                                   ping_log=server.ping_log)
+        response = telegram.send_message(warn)
+        if not response.ok:
+            return Executor(
+                status=Status.error,
+                message=f"{warn} telegram response is not ok. "
+                        f"code: {response.error_code}, "
+                        f"description: {response.description}."
+            )
+        else:
+            return Executor(
+                status=Status.warn,
+                message=f"{warn} telegram message successfully sent."
+            )
     else:
-        logger.warning(f"{warn} telegram message successfully sent.")
+        return Executor(
+            status=Status.log,
+            message=_generate_log_record(
+                settings=settings,
+                instance=instance,
+                offline=False,
+                ping_log=server.ping_log
+            )
+        )

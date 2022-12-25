@@ -1,12 +1,12 @@
 import os
 import re
 
-from datatypes.ping import Ping, Packets
 from datatypes.config import Settings
+from datatypes.ping import Ping, Packets
 
 
 class Server:
-    PING_COUNT = 50
+    PING_COUNT = 5
     PING_INTERVAL = 1
 
     def __init__(self, host: str, name: str, settings: Settings):
