@@ -6,7 +6,7 @@ from datatypes.ping import Ping, Packets
 
 
 class Server:
-    PING_COUNT = 5
+    PING_COUNT = 50
     PING_INTERVAL = 1
 
     def __init__(self, host: str, name: str, settings: Settings):
