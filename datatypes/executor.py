@@ -4,11 +4,15 @@ from pydantic import BaseModel
 
 
 class Status(Enum):
-    log = 'log'
-    warn = 'warning'
-    error = 'error'
+    LOG = 'log'
+    WARN = 'warning'
+    ERROR = 'error'
 
 
 class Executor(BaseModel):
     status: Status
     message: str
+
+class Server(BaseModel):
+    host: str
+    name: str

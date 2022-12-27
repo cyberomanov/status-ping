@@ -3,7 +3,11 @@ from sys import stderr
 from loguru import logger
 
 
-def create_logger(log_output: str, log_rotation: str):
+LOG_OUTPUT = "./log/ping.log"
+LOG_ROTATION = "50 MB"
+
+
+def add_logger(log_output: str = LOG_OUTPUT, log_rotation: str = LOG_ROTATION):
     logger.remove()
     logger.add(
         stderr,
@@ -16,5 +20,5 @@ def create_logger(log_output: str, log_rotation: str):
         "|                    PING {sv}                    |\n"
         "| ----------------------------------------------- |\n"
         "|            with love by @cyberomanov            |\n"
-        "└ ----------------------------------------------- ┘".format(sv='v2.5')
+        "└ ----------------------------------------------- ┘".format(sv='v2.6')
     )
