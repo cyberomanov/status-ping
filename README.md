@@ -1,26 +1,26 @@
-# ping
+# PING
 
 this system will alert you with telegram about offline servers.<br>
 [donations are welcome](https://cyberomanov.tech/WTF_donate), if you find this tool helpful.
 
-## contents
-1. [screenshots](https://github.com/cyberomanov/status-ping#screenshots)
-2. [installation](https://github.com/cyberomanov/status-ping#installation)
-3. [update](https://github.com/cyberomanov/status-ping#update)
+## Contents
+1. [Screenshots](https://github.com/cyberomanov/status-ping#screenshots)
+2. [Installation](https://github.com/cyberomanov/status-ping#installation)
+3. [Update](https://github.com/cyberomanov/status-ping#update)
 
-### screenshots
+### Screenshots
 
 
 <p align="center">
-<img width="1000" alt="image" src="https://user-images.githubusercontent.com/41644451/209399231-e27f2a85-1f05-4583-bcd9-227e2fe800c0.png">
+<img width="1000" alt="image" src="./assets/terminal.png">
 <br> <br>
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/41644451/209399270-1630eda4-deee-419a-9843-fa049a817e9e.png">
+<img width="600" alt="image" src="./assets/telegram.png">
 </p>
 
-### installation
+### Installation
 
-1. Create telegram bot via `@BotFather`, customize it and `get bot API token` ([how_to](https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token)).
-2. Create at least 1 group: `alarm`. Customize it, add your bot into this chat and `get chat ID` ([how_to](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id)).
+1. Create telegram bot via `@BotFather`, customize it and get `bot_API_token` ([how_to](https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token)).
+2. Create at least 1 chat: `alarm`. Customize it, add your bot into this chat and get `chat_ID` ([how_to](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id)).
 3. Connect to your server where you plan to install ping-system.
 4. Install `python3.10`:
 ```
@@ -53,7 +53,8 @@ cd ~/ping/
 ```
 pip3 install -r ~/ping/requirements.txt
 ```
-7. Edit `config.yaml` (recommend to set 1 offline/non-pingable server to check your alarms via telegram):
+7. Edit `config.yaml`:
+> recommend to set 1 offline/non-pingable server to check your alarms via telegram.
 ```
 nano ~/ping/config.yaml
 ```
@@ -66,11 +67,11 @@ python3 ping.py
 > so you have to edit your crontab rules with this knowledge.
 ```
 # ping
-*/15 * * * * cd /root/ping/ && /usr/bin/python3 ping.py
+*/5 * * * * cd /root/ping/ && /usr/bin/python3 ping.py
 ```
 > check your logs in 5-10-15 minutes here: `~/ping/log/ping.log`
 ---------
-### update
+### Update
 
 1. backup your config:
 ```
@@ -89,9 +90,11 @@ cat ~/ping/config.yaml
 ```
 4. restore your previous config, **ONLY** if there is no breaking changes, else edit the new file:
 ```
-mv ~/config_temp.yaml ~/ping/config.yaml
-OR
 nano ~/ping/config.yaml
+
+OR
+
+mv ~/config_temp.yaml ~/ping/config.yaml
 ```
 5. Install requirements:
 ```
