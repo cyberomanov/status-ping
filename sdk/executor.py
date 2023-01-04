@@ -14,7 +14,7 @@ Sec = int
 
 
 class PingExecutor:
-    PING_COUNT = 5
+    PING_COUNT = 50
     PING_INTERVAL: Sec = 1
     MAX_PACKETS_LOSS: Perc = 80
 
