@@ -5,25 +5,25 @@ import re
 from loguru import logger
 
 from datatypes.config import Settings
-from datatypes.server import Server
 from datatypes.packets import Packets
+from datatypes.server import Server
 from sdk.telegram import Telegram
 
 Perc = float
+Sec = int
 
 
 class PingExecutor:
     PING_COUNT = 5
-    PING_INTERVAL = 1
+    PING_INTERVAL: Sec = 1
     MAX_PACKETS_LOSS: Perc = 80
 
-    def __init__(self, instances: list[Server], telegram: Telegram, settings: Settings):
-        self.instances = instances
-        self.telegram = telegram
+    def __init__(self, settings: Settings, telegram: Telegram, instances: list[Server]):
         self.settings = settings
+        self.telegram = telegram
+        self.instances = instances
 
         self.indexes = range(0, len(self.instances))
-        self.is_offline = True
 
     def start(self):
         with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -44,7 +44,7 @@ class PingExecutor:
                 if packets_loss > PingExecutor.MAX_PACKETS_LOSS:
                     self._print_warn(instance=instance, text=ping_result)
                 else:
-                    self.is_offline = False
+                    instance.is_offline = False
                     self._print_log(instance=instance, text=ping_result)
 
     def _print_warn(self, instance: Server, text: str):
@@ -67,7 +67,7 @@ class PingExecutor:
         )
 
     def _generate_log_record(self, instance: Server, text: str):
-        emoji = self.settings.offline_emoji if self.is_offline else self.settings.online_emoji
+        emoji = self.settings.offline_emoji if instance.is_offline else self.settings.online_emoji
 
         return self.settings.message_template.format(
             emoji=emoji,

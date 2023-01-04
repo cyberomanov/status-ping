@@ -2,7 +2,6 @@ from sys import stderr
 
 from loguru import logger
 
-
 LOG_OUTPUT = "./log/ping.log"
 LOG_ROTATION = "50 MB"
 
