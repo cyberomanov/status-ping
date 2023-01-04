@@ -22,7 +22,7 @@ this system will alert you with telegram about offline servers.<br>
 1. Create telegram bot via `@BotFather`, customize it and get `bot_API_token` ([how_to](https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token)).
 2. Create at least 1 chat: `alarm`. Customize it, add your bot into this chat and get `chat_ID` ([how_to](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id)).
 3. Connect to your server where you plan to install ping-system.
-4. Install `python3.10`:
+4. Install `python3.10` or newer:
 ```
 # one-line-command
 sudo apt-get update && \
@@ -63,7 +63,7 @@ nano ~/ping/config.yaml
 python3 ping.py
 ```
 9. If all seems okay, then edit your crontab with `crontab -e`:
-> 1 ping for 1 server takes about 10-15 secs.<br>
+> ping 10 server takes about 2 minutes with 1 cpu x 1 ram vps.<br>
 > so you have to edit your crontab rules with this knowledge.
 ```
 # ping
