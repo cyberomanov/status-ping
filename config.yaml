@@ -7,16 +7,13 @@ servers:
 settings:
 
   # telegram
-  bot_api_key: "1703:AA-BB_CC"
-  alarm_chat_id: "-2109"
-  
+  bot_api_key: "2078979512:AAGVo9omO-IP8cr_VuBqChKgqkoRpulRgIk"
+  alarm_chat_id: "-748451309"
+
+  # privacy. if 'true', then "178.x.x.19". if 'false', then "178.18.17.19"
+  streamer_mode: true
+
   # output
   online_emoji: "\U0001F7E2"
   offline_emoji: "\U0001F534"
-  message_template: "{emoji} {name} /// {host} {emoji} | {ping_log}."
-  streamer_mode: true  # if true: "178.x.x.19", else: "178.18.17.19"
-  
-  # logic
-  log_output: "./log/ping.log"
-  log_rotation: "50 MB"
-  packets_loss_for_alarm: 80  # in percent
+  message_template: "{emoji} {name} /// {host} {emoji} | {text}."
