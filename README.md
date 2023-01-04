@@ -63,7 +63,7 @@ nano ~/ping/config.yaml
 python3 ping.py
 ```
 9. If all seems okay, then edit your crontab with `crontab -e`:
-> ping 10 server takes about 2 minutes with 1 cpu x 1 ram vps.<br>
+> ping 10 servers takes about 2 minutes with 1 cpu x 1 ram vps.<br>
 > so you have to edit your crontab rules with this knowledge.
 ```
 # ping
